@@ -1,0 +1,19 @@
+{% extends 'admin/base.html' %}
+
+{% block content%}
+{{super()}}
+<div id="login" class="login_window">
+   <div class="login">
+      <p class="title">Админ панель</p>
+      {% for cat, msg in get_flashed_messages(true) %}
+         <div class="flash {{cat}}">{{msg}}</div>
+      {% endfor %}
+      <form action="" method="post" class="form_login">
+         <p> <label class="form_label">Логин:</label><input type="text" name="user"></p>
+         <p> <label class="form_label">Пароль:</label><input type="text" name="psw"></p>
+         <p align="center"><input class="login_buttom" type="submit" value="Войти"></p>
+      </form>
+   </div>
+</div>
+
+{% endblock %}

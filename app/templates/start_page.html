@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+   {% if title -%}
+      <title>{{title}}-FChat</title>
+   {% else -%}
+      <title>Flask chat</title>
+   {% endif -%}
+   
+   <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body> 
+   
+   {%block content -%}
+   
+   {% if title -%}
+      <div class="mainbody_hstring"><h2>Flask chat - {{title}}</h2></div>
+   {% else %}
+      <div class="mainbody_hstring"><h2>Flask chat</h2></div>
+   {% endif -%}
+   <div class="content_block">
+   {% block mainmenu %}
+   <ul class="content_block_mainmenu_ul">
+      {%for m in menu -%}
+      <a href="{{m.url}}" class="content_block_mainmenu_href">{{m.title}}</a>
+      {% endfor %}
+   </ul>
+   {% endblock mainmenu %}
+   {% block mainblock_page%}
+      <div class="mainblock"><p>Это главный блок</p></div>
+   {% endblock mainblock_page%}
+   {% endblock -%}
+   </div>
+   
+</body>

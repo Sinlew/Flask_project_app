@@ -1,0 +1,39 @@
+{% extends 'start_page.html' %}
+
+{% block mainblock_page%}
+<div class="mainblock_page_signup_form">
+   {% for cat, msg in get_flashed_messages(true) %}
+      <div class="flash_reg {{cat}}">{{msg}}</div>
+   {% endfor %}
+
+   <form action="" method="post" class="mainblock_page_signin_form" novalidate>
+      {{form.hidden_tag()}}
+
+{% for field in form if field.name not in ['csrf_token', 'remind_me', 'submit'] %}
+      <p>{{ field.label() }}
+         {% if field.errors %}
+         {{ field(class="invalid form_input")}}
+         <span class="invalid_feedback">
+            {% for e in feild.errors %}
+            {{e}}
+            {% endfor %}
+         </span>
+         {% else %}
+            {{field(class="form_input")}}
+         {% endif %}
+{% endfor %}
+<p>
+   {{form.remind_me.label()}}
+   {{form.remind_me(class_="remind_me_string form_input", placeholder_="Запомнить")}}
+   
+</p>
+<p>
+   {{form.submit(class_="submit_string form_input")}}
+</p>
+<p>
+   <a href="{{url_for('registration')}}" class="redirect_string form_input">Регистрация</a>
+</p>
+   </form>
+</div>
+
+{% endblock %}

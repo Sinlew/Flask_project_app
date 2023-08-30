@@ -1,0 +1,134 @@
+body{
+   background-color: rgb(114, 113, 126);
+   margin: 0;
+}
+textarea{
+   resize: none;  
+}
+a{
+   text-decoration: none;
+}
+
+.main_body{
+   background-color: bisque;
+   height: 100px;
+   grid-column: 1 / 3;
+}
+
+.post_form{
+   width:100%;
+   padding: 0px;
+}
+
+.name_post_string{
+   width: 99.5%;
+}
+
+.post_submit_string{
+   width: 100.3%;
+}
+
+
+div.mainbody_hstring{
+   background-color: aquamarine;
+   list-style: none;
+   height: 60px;
+   margin: 0px;
+   overflow: hidden;
+   font-size: 20;
+   padding-bottom: 10px;
+   padding-top: 0px;
+   border: #594b5c;
+   
+}
+
+
+div.mainblock_page_registration_form{
+   display: grid;
+   justify-content: left;
+   padding-left: 15%;
+   
+}
+
+div.content_block{
+   display: grid;
+   grid-template-columns: 1.2fr 3fr ;
+   grid-column-gap: 15px;
+   justify-content: center;
+   padding-left:15%;
+   padding-right: 20%;
+}
+ul.content_block_mainmenu_ul{
+   
+   display: grid;
+   grid-template-columns: 9em;
+   grid-template-rows: repeat(5, 3em);
+   grid-row-gap: 4px;
+   justify-content: flex-end;
+   
+
+}
+div.mainblock{
+   margin-left: 5px;
+   margin-top: 15px;
+
+}
+.mainblock_news{
+   width: 35em;
+   display: grid;
+   
+   grid-row-gap: 7px ;
+}
+div.mainblock_news_post{
+   background-color: aliceblue;
+   padding-left: 10px ;
+   border-radius: 0.7em;
+   
+}
+div.mainblock_news_newpostHref{
+ padding-top: 1em ;
+ padding-bottom: 1em;
+   
+}
+
+form.mainblock_page_post_form{
+   padding-top: 0;
+}
+
+.avatar{
+   width: 150px;
+   height: 150px;
+}
+   
+
+
+
+a.content_block_mainmenu_href{
+   background-color: aquamarine;
+   font-size: 21px;
+   border-radius: 15px;
+   padding: 10px;
+   text-decoration: none;
+   color: #251728;
+   
+}
+a.content_block_mainmenu_href:visited{
+   color: #251728;
+}
+
+a.content_block_mainmenu_href:hover{
+   background-color: aqua;
+}
+
+
+.flash_reg.success{
+border: 1px solid #21DB56;
+background: #AEFFC5;
+width: 200px;
+
+}
+.flash_reg.false{
+border: 1px solid #db1010;
+background: #e13e3e;
+width: 200px;
+}

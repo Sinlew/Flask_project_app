@@ -1,0 +1,16 @@
+{% extends 'start_page.html' %}
+
+{% block mainblock_page%}
+<div class="mainblock mainblock_news">
+   <div class="mainblock_news_post mainblock_news_newpostHref">
+      <a href="{{url_for('add_post')}}">Создать новость</a> 
+   </div>
+    
+{% for p in posts%}
+<div class="mainblock_news_post">
+   <p class="mainblock_news_post_href"><a href="{{url_for('showPost', alias=p.url)}}">{{p.title}}</a></p>
+   <p class="mainblock_news_post_text">{{p.text[:50] | striptags }}</p>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

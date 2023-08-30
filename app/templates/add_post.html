@@ -1,0 +1,25 @@
+{% extends 'start_page.html' %}
+
+{% block mainblock_page%}
+
+<div class="mainblock_page_newpost_form form_div mainblock">
+   
+   <form action="{{url_for('add_post')}}" method="post" class="mainblock_page_post_form form" novalidate>
+   {{form.hidden_tag()}}
+   <p>
+      {{form.name( class_="name_post_string post_form form_input", placeholder_="Заголовок")}}
+   </p>
+   <p>
+      {{form.url( class_="url_post_string post_form form_input", placeholder_="Url")}}
+   </p>
+   <p>
+      {{form.post(class_="post_textarea post_form form_input", placeholder_="Запись")}}
+   </p>
+   {% for cat, msg in get_flashed_messages(true) %}
+      <div class="flash_reg {{cat}}">{{msg}}</div>
+   {% endfor  %}
+   <p>
+      {{form.submit(class_="submit_string post_form form_input")}}
+   </p>
+   </form>
+{% endblock %}

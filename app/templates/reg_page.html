@@ -1,0 +1,30 @@
+{% extends 'start_page.html' %}
+
+{% block mainblock_page%}
+<div class="mainblock_page_registration_form form_div">
+<form action="{{url_for('registration')}}" method="post" class="mainblock_page_registration_form form" novalidate>
+
+{{form.hidden_tag()}}
+{% for field in form if field.name not in ['csrf_token', 'submit'] %}
+      <p>{{ field.label() }}
+         {% if field.errors %}
+         {{ field(class="invalid form_input")}}
+         <span class="invalid_feedback">
+            {% for e in feild.errors %}
+            {{e}}
+            {% endfor %}
+         </span>
+         {% else %}
+            {{field(class="form_input")}}
+         {% endif %}
+{% endfor %}
+<p>
+   {{form.submit(class_="submit_string form_input")}}
+</p>
+
+</form>
+{% for cat, msg in get_flashed_messages(true) %}
+<div class="flash_reg {{cat}}">{{msg}}</div>
+{% endfor  %}
+</div>
+{% endblock %}
